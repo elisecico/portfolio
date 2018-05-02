@@ -1,0 +1,57 @@
+.home
+    display: flex
+    flex-flow: row nowrap
+    height: 100vh
+    .side-nav
+        position: relative
+        width: 280px
+        border-right: 2px solid $grey20
+        .side-nav__logo
+            padding: 20px 40px
+            border-bottom: 2px solid $grey20
+            .logo__subtitle
+                text-align: center
+                font-size: 1em
+                line-height: 1.5
+                font-family: 'mulibold'
+                color: $blue
+            .logo__image
+                background-image: url('/assets/thales_logo.png')
+                background-size: contain
+                background-repeat: no-repeat
+                background-position: center
+                height: 30px
+        .side-nav__menu
+            padding: 20px 40px
+            max-height: 70%
+            overflow: auto
+            .side-nav__menu__item
+                padding: 15px 0
+                cursor: pointer
+                text-transform: capitalize
+                display: block
+                &.active
+                    color: $violet
+                &--logout
+                    @extend .side-nav__menu__item
+                    padding-top: 40px
+            .line-break
+                border-bottom: 2px solid $grey20
+                margin-top: 20px
+                margin-left: -40px
+                margin-right: -40px
+        .version
+            position: absolute
+            bottom: 15px
+            right: 15px
+            left: 15px
+            line-height: 1.5
+            font-size: $fsize-m
+    .main
+        flex: 1 1 auto
+        background-color: $grey5
+        overflow: hidden
+        .header
+            background-color: $violet
+            padding: 30px 50px
+            text-transform: capitalize

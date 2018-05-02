@@ -1,0 +1,65 @@
+/*---------------------- common styles' imports ----------------------*/
+
+@import './colors'
+@import './mixins'
+
+@keyframes updatemsg
+  0%
+    opacity: 0
+  25%
+    opacity: 1
+  75%
+    opacity: 1
+  100%
+    opacity: 0
+
+.card-settings
+    position: relative
+    background: $white
+    padding: 28px
+    width: 100%
+    overflow: hidden
+    max-height: 90px
+    transition: all 0.3s ease-in-out
+    &.open
+        max-height: 1000px // trick to make sliding transition work
+        height: auto
+    @include minwidth($tablet)
+        padding: 30px
+        max-width: 600px
+        border-radius: 3px
+    .card-settings__title
+        margin-bottom: 30px
+    .card-settings__label
+        margin-bottom: 36px
+    .card-settings__button-wrapper
+        text-align: right
+        margin-top: 15px
+    .card-settings__update-msg
+        position: absolute
+        bottom: 0
+        padding: 48px
+        right: 0
+        left: 0
+        background: $white
+        color: $blue
+        font-family: 'mulisemibold'
+        font-size: 1.25em
+        text-align: right
+        display: none
+    .card-settings__toggle
+        color: $azure
+        text-transform: uppercase
+        font-family: 'mulibold'
+        float: right
+        cursor: pointer
+        transition: all 0.3s linear
+        &:hover
+            color: $violet
+
+.card-settings.open
+    .card-settings__update-msg.updated
+        // DOES NOT DISPLAY MESSAGE IF CARD IS CLOSED
+        display: block
+        opacity: 0
+        animation: updatemsg 2s infinite

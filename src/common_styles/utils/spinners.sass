@@ -1,0 +1,72 @@
+/*---------------------- common styles' imports ----------------------*/
+
+@import './colors'
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.spinner
+  display: block
+  height: 50px
+  width: 50px
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 50px
+    height: 50px
+    margin-top: -25px
+    margin-left: -25px
+    border-radius: 50%
+    border: 3px solid $white
+    border-top-color: $blue
+    border-right-color: $azure
+    border-bottom-color: $blue
+    border-left-color: $azure
+    animation: spin .6s linear infinite
+
+.spinner-overlay
+    width: 100vw
+    height: 100vh
+    position: absolute
+    background-color: aliceblue
+
+.spinner--menu
+  @extend .spinner
+  height: 56px
+  width: 56px
+  margin: 0 auto
+  &:before
+    position: relative
+    margin-top: 0
+    margin-left: 0
+    top: 0
+    left: 0
+    display: block
+
+.spinner--main
+  @extend .spinner
+  position: relative
+  margin: 10% auto
+
+.spinner--card
+  @extend .spinner
+  position: absolute
+  bottom: 0
+  background-color: $white
+  right: 0
+  left: 0
+  width: 100%
+  padding: 60px
+
+.spinner--reboot
+  @extend .spinner
+  position: absolute
+  padding: 100px 160px 0 160px
+  top: 110px
+  left: 300px
+  background: $grey5

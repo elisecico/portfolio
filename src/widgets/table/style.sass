@@ -1,0 +1,143 @@
+// NOTE: classes `col-${index + 1}` must be styled in father component
+// their width dependes on their content's average width
+
+.status
+    &:after
+        content: ''
+        display: block
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        margin-left: 7%
+    > span
+        display: none
+
+.table
+    max-width: 1000px
+    background-color: $white
+    margin: 0 50px
+    padding-bottom: 12px
+    border-radius: 3px
+    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2)
+    .table__buttons
+        padding: 10px 0
+    .hide-alarm-button
+        display: none
+    .table__row
+        border-top: 1px solid $grey20
+        padding: 15px 30px
+        display: flex
+        flex-flow: row nowrap
+        align-items: center
+        transition: all 0.3s linear
+        cursor: pointer
+        .RECORDING
+            @extend .status
+            &:after
+                background-color: $green
+        .STOPPED, .NOT.RECORDING
+            @extend .status
+            &:after
+                background-color: $grey30
+        .ERROR
+            @extend .status
+            &:after
+                background-color: $red
+        .DISABLED
+            > span
+                text-transform: lowercase
+                margin-left: -10px
+        .alarmed
+            &:after
+                $triangle_height: 30px
+                content: ''
+                width: 0
+                height: 0
+                border-bottom: $triangle_height solid $orange
+                border-left: $triangle_height/1.73 solid transparent
+                border-right: $triangle_height/1.73 solid transparent
+                display: block
+        &.active, &:hover
+            background-color: $grey10
+            .white-border
+                margin-top: -6px
+                left: 8px
+                width: 16px
+                height: 0
+                border: solid 5px $grey10
+        &.active
+            .checkbox
+                label
+                    border: 2px solid $azure
+                    background-color: $azure
+                    &:after
+                        content: ''
+                        display: block
+                        width: 4px
+                        height: 9px
+                        border: solid $white
+                        border-width: 0 2px 2px 0
+                        transform: rotate(45deg)
+                        margin-left: 4px
+        .checkbox
+            flex: 0 0 5%
+            label
+                display: block
+                width: 18px
+                height: 18px
+                border: 2px solid $grey50
+                border-radius: 1px
+                cursor: pointer
+                input
+                    display: none
+        &--header
+            @extend .table__row
+            color: $grey30
+            font-family: 'mulisemibold'
+            font-size: 1em
+            text-transform: capitalize
+            cursor: default
+            &.active, &:hover
+                background-color: $white
+                cursor: default
+
+.edit-icon
+    width: 21px
+    height: 21px
+    border: 3px solid $azure
+    position: relative
+    border-radius: 3px
+
+    .white-border
+        margin-top: -6px
+        left: 8px
+        width: 15px
+        height: 0
+        border: solid 5px $white
+        transform: rotate(-45deg)
+        position: absolute
+        transition: all 0.3s linear
+
+    .pencil
+        margin-top: -2px
+        left: 7px
+        width: 15px
+        height: 0
+        border: solid 2px #6FC0DD
+        transform: rotate(-45deg)
+        position: absolute
+
+    .pencil:before
+        content: ''
+        position: absolute
+        left: -11px
+        top: -2px
+        width: 0px
+        height: 0px
+        border-left: solid 6px transparent
+        border-right: solid 3.5px $azure
+        border-top: solid 2.1px transparent
+        border-bottom: solid 2.1px transparent
+
+.table__header
+    padding: 24px 30px

@@ -1,0 +1,33 @@
+.nav
+    position: relative
+    z-index: 3
+    display: flex
+    flex-flow: row nowrap
+    align-content: center
+    justify-content: flex-end
+    padding: 16px 24px
+    background-color: #FBEABC
+    background-image: url('/assets/linedpaper.png')
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35)
+    border-bottom: 5px solid #F4BF14
+    .nav__title
+        align-self: flex-start
+        flex: 1 1 auto
+        font-size: 18px
+        line-height: 1
+        color: #CC6141
+        font-family: 'Permanent Marker', cursive
+        letter-spacing: 2px
+        span
+            color: #EB8C60
+            transition: all 0.25s linear
+        &:hover
+            span
+               color: #CC6141 
+    .nav__item
+        display: block
+        padding-left: 24px
+        color: #5E3916
+        transition: all 0.25s linear
+        &:hover, &.active
+            color: #F4BF14

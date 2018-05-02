@@ -1,0 +1,69 @@
+/*---------------------- common styles' imports ----------------------*/
+
+@import './colors'
+
+.label
+  text-transform: capitalize
+  color: $grey50
+  display: block
+
+.input
+  color: $grey75
+  border: 0
+  border-bottom: 2px solid $grey50
+  padding: 5px 0
+  display: block
+  margin-top: 5px
+  transition: all 0.25s ease-in-out
+  &:hover
+    border-bottom: 2px solid $azure
+  &:focus
+    outline: 0
+    border-bottom: 2px solid $azure
+  &[disabled]
+    background-color: transparent
+    &:hover
+      border-bottom: 2px solid $grey50
+  &:-ms-input-placeholder
+      color: $azure_light
+  &::-moz-placeholder
+      color: $azure_light
+  &::-webkit-input-placeholder
+      color: $azure_light
+
+.radio-label
+  $radio_width: 25px
+  flex: 0 0 30%
+  margin-top: 12px
+  display: flex
+  align-items: center
+  span
+    color: $grey75
+    font-size: 1.25em
+    text-transform: none
+    font-family: 'mulisemibold'
+  .radio[type="radio"]
+    display: none
+    &:checked + div .radio-check-inside
+      opacity: 1
+    &:checked:hover + div .radio-check-inside
+      opacity: 1
+    &:hover + div .radio-check-inside
+      opacity: 0.5
+  .radio-check
+    width: $radio_width
+    height: $radio_width
+    border-radius: 50%
+    border: $radio_width*0.1 solid $grey50
+    position: relative
+    margin-right: 10px
+  .radio-check-inside
+    width: $radio_width*0.6
+    height: $radio_width*0.6
+    margin-top: $radio_width*0.1
+    margin-left: $radio_width*0.1
+    border-radius: 50%
+    background-color: $azure
+    position: absolute
+    opacity: 0
+    transition: all 0.25s linear

@@ -1,0 +1,74 @@
+/*---------------------- common styles' imports ----------------------*/
+
+@import './colors'
+@import './mixins'
+
+/*---------------------- Muli font-family ----------------------*/
+
+@include fontStyle('muliblack', muli-black, normal, normal)
+@include fontStyle('muliextrabold', muli-extrabold, normal, normal)
+@include fontStyle('mulibold', muli-bold, normal, normal)
+@include fontStyle('muliblack', muli-black, normal, normal)
+@include fontStyle('mulisemibold', muli-semibold, normal, normal)
+@include fontStyle('muliregular', muli-regular, normal, normal)
+@include fontStyle('mulilight', muli-light, normal, normal)
+
+/*--------- variables for widgets and first div in each component ---------*/
+/* ~ in REM */
+
+$fsize-xs: 0.625rem // base 16 -> 10px
+$fsize-s: 0.75rem // base 16 -> 12px
+
+$fsize-ms: 0.875rem // base 16 -> 14px
+$fsize-m: 1rem // base 16 -> 16px
+$fsize-ml: 1.125rem // base 16 -> 18px
+
+$fsize-l: 1.25em // base 16 -> 20px
+$fsize-xl: 1.5rem // base 16 -> 24px
+$fsize-2xl: 1.625rem // base 16 -> 26px
+$fsize-3xl: 1.875rem // base 16 -> 30px
+$fsize-4xl: 2rem // base 16 -> 32px
+$fsize-5xl: 2.25rem // base 16 -> 36px
+$fsize-6xl: 2.5rem // base 16 -> 40px
+$fsize-7xl: 3rem // base 16 -> 48px
+
+/*---------------- typographic classes ----------------*/
+/* ~ in EM */
+
+.t-header
+  font-size: 1.5em
+  line-height: 1.5
+  color: $white
+
+.t-sidenav
+  font-size: 1.25em
+  line-height: 1.5
+  font-family: 'mulibold'
+  color: $blue
+  transition: all 0.3s linear
+  &:hover
+    color: $violet
+
+.t-title
+  font-size: 1.25em
+  line-height: 1.5
+  color: $blue
+  font-family: 'mulisemibold'
+
+.t-aux
+  font-size: 1.125em
+  line-height: 1.5
+
+.t-table-row
+  font-size: 1.125em
+  line-height: 1.5
+  word-break: break-all;
+
+.t-label
+  font-size: 0.875em
+  line-height: 1.5
+
+.t-input
+  font-size: 1.25em
+  line-height: 1.5
+  font-family: 'mulisemibold'

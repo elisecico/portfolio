@@ -1,0 +1,20 @@
+/*---------------------- local variables ----------------------*/
+
+$phone-big: 420px
+$tablet: 768px
+$ipad: 1024px
+$desktop: 1440px
+$desktop2k: 1980px
+
+/*---------------------- mixins ----------------------*/
+
+@mixin minwidth($w)
+  @media screen and (min-width : $w)
+    @content
+
+@mixin fontStyle($name, $file, $fontWeight, $fontStyle)
+  @font-face
+    font-family: $name
+    src: url('./webfonts/#{$file}-webfont.woff') format("woff2"), url('./webfonts/#{$file}-webfont.woff2') format("woff")
+    font-style: $fontStyle
+    font-weight: $fontWeight
